@@ -1,0 +1,17 @@
+Variable Name	      Description
+subject_test        data frame created by reading in “subject_test.txt” file from UCI Data set
+X_test              data frame created by reading in “X_test.txt” file from UCI Data set
+y_test              data frame created by reading in “y_test.txt” file from UCI Data set
+subject_train       data frame created by reading in “subject_train.txt” file from UCI Data set
+X_train             data frame created by reading in “X_train.txt” file from UCI Data set
+y_train             data frame created by reading in “y_train.txt” file from UCI Data set
+features            data frame created by reading in “features.txt” file from UCI Data set
+activity_labels     data frame created by reading in “activity_labels.txt” file from UCI Data set
+SubjectNum          Created by passing V1 from “subject_test” & “subject_train” data frames to respective data sets “X_test” &  “X_train”
+Dataset             Set equal to “Test” or “Train” based on the origin data set, data originating from “X_test”  = “Test”, data originating from “X_Train” = “Train”; not required for Assignment Project, allows user to identify origins of observations is “test_train_ds”, allows for more robust analysis in “test_train_ds”
+activity            Created by matching “activity_labels” 1st variable, V1, to “y_test” and “y_train” 1st variable, V1, and assigning “activity_labels” 2nd variable, V2
+                    This allows for descriptive labeling of activity in the tidy data sets “test_train_ds”, “musig_ds”, and creation of variable “Subjact” used in the output txt file and tidy data set “musig_out”
+test_train_ds       Created by merging the modified data sets “X_test” and “X_train”, represents tidy data set of merged original data sets with appropriate descriptive labeling for variable names and activity
+musig_ds            Created by extracting only the variables from the tidy data set “test_train_ds” that contain any of the following:  “mean”, “Mean”, “std”, “Subject”, or “activity”, in the variable name
+Subjact             Created using the unite() function, combining & replacing variables “SubjNum” & “activity” from the “musig_ds”; used in “musig_out” to calculate the average for each variable & create the output file, “musig_out.txt”
+musig_out           Final, output tidy data set created “musig_ds”, contains averages by Subject & by activity
