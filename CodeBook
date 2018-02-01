@@ -17,6 +17,8 @@ Subjact             Created using the unite() function, combining & replacing va
 musig_out           Final, output tidy data set created “musig_ds”, contains averages by Subject & by activity
 
 Variables in musig_out.txt file, showing average for each
+SubjNum
+activity
 tBodyAcc-mean()-X
 tBodyAcc-mean()-Y
 tBodyAcc-mean()-Z
