@@ -70,6 +70,7 @@
 ##
   musig_out <- unite(musig_ds, Subjact, SubjectNum:activity, sep="")
   musig_out <- aggregate(musig_out[,1:86], list(musig_out$Subjact), mean)
+  musig_out <- separate(musig_out, Group.1, into = c("SubjNum", "activity"), sep = 2)
   View(musig_out)
   write.table(musig_out, "musig_out.txt", row.names = FALSE)
   
